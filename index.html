@@ -9,7 +9,7 @@
             --bg-color: #f4f7f6;
             --card-bg: #ffffff;
             --text-color: #333333;
-            --accent-color: #2da44e; /* GitHub風のプレザントグリーン */
+            --accent-color: #2da44e; /* GitHubライクなグリーン */
             --hover-color: #2c974b;
         }
 
@@ -77,6 +77,9 @@
     </div>
 
     <script>
+        // 固定のベースURL
+        const baseUrl = "https://0128-game.github.io/";
+
         // 同一ディレクトリにある links.json を読み込む
         fetch('./links.json')
             .then(response => {
@@ -100,7 +103,10 @@
             
             links.forEach(link => {
                 const a = document.createElement('a');
-                a.href = link.url;
+                
+                // ベースURLとJSONのpathを結合（末尾のプレースホルダー処理を考慮）
+                a.href = baseUrl + link.path + '/'; 
+                
                 a.textContent = link.name;
                 a.className = 'link-item';
                 a.target = '_blank';
