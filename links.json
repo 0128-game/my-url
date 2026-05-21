@@ -1,18 +1,73 @@
 [
   {
-    "name": "Google",
-    "path": "google-project"
+    "name": "Vocaclear",
+    "path": "Vocaclear"
   },
   {
-    "name": "GitHub",
-    "path": "github-project"
+    "name": "回路シミュレーター",
+    "path": "logic"
   },
   {
-    "name": "My Game 1",
-    "path": "game-one"
+    "name": "ハノイの塔",
+    "path": "Hanoi"
   },
   {
-    "name": "My Game 2",
-    "path": "game-two"
-  }
+    "name": "FizzBuzz",
+    "path": "FizzBuzz"
+  },
+  {
+    "name": "ハングル組み合わせ",
+    "path": "hangul"
+  },
+  {
+    "name": "キプソル語",
+    "path": "kipsol"
+  },
+  {
+    "name": "反復ゴリ押しフラッシュカード",
+    "path": "History-quiz"
+  },
+  {
+    "name": "ラトラ語",
+    "path": "latla"
+  },
+  {
+    "name": "ソートシミュレーター",
+    "path": "sort"
+  },
+  {
+    "name": "モールス信号 難",
+    "path": "morls-signal"
+  },
+  {
+    "name": "モールス信号 易",
+    "path": "morse-tree"
+  },
+  {
+    "name": "オンラインメモ",
+    "path": "online-memo"
+  },
+  {
+    "name": "日本語クソ文字",
+    "path": "electroharmonix-memo"
+  },
+  {
+    "name": "エラトステネスの篩",
+    "path": "Eratosthenes-sieve"
+  },
+  {
+    "name": "サイコロ確率",
+    "path": "dice"
+  },
+
+  
+
+
+
+
+
+
+
+
+
 ]
