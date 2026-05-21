@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マイ・リンク集</title>
+    <style>
+        :root {
+            --bg-color: #f4f7f6;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --accent-color: #2da44e; /* GitHub風のプレザントグリーン */
+            --hover-color: #2c974b;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+        }
+
+        .link-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-item {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .link-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent-color);
+            color: var(--hover-color);
+        }
+
+        .error-message {
+            color: #cf222e;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Link Collection</h1>
+        <div id="link-container" class="link-list">
+            </div>
+    </div>
+
+    <script>
+        // 同一ディレクトリにある links.json を読み込む
+        fetch('./links.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('JSONファイルの読み込みに失敗しました');
+                }
+                return response.json();
+            })
+            .then(data => {
+                renderLinks(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('link-container').innerHTML = 
+                    `<p class="error-message">リンクデータの読み込みに失敗しました。</p>`;
+            });
+
+        // リンクを画面に描画する関数
+        function renderLinks(links) {
+            const container = document.getElementById('link-container');
+            
+            links.forEach(link => {
+                const a = document.createElement('a');
+                a.href = link.url;
+                a.textContent = link.name;
+                a.className = 'link-item';
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                
+                container.appendChild(a);
+            });
+        }
+    </script>
+</body>
+</html>
