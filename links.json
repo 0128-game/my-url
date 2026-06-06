@@ -62,5 +62,9 @@
   {
     "name": "元素クイズ",
     "path": "element-quiz"
+  },
+  {
+    "name": "Utalog",
+    "path": "Utalog"
   }
 ]
